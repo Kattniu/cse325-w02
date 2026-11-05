@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<h2>Welcome</h2>
+
+<ul>
+    @for (int i = 0; i < (int)ViewData["NumTimes"]!; i++)
+    //(int): convierte el valor de ViewData["NumTimes"] a un número entero (int).
+    //!: indica al compilador que confiamos en que ese valor no es null (no está vacío).
+    {
+        <li>@ViewData["Message"]</li> 
+        //li, crea un elemento de la lista HTML para cada iteración del bucle, mostrando el mensaje almacenado en ViewData["Message"].
+        //@ permite insertar el valor de una expresion c# en html
+        //ViewData["Message"] recupera el mensaje que guardamos en el controller 
+    }
+</ul>
